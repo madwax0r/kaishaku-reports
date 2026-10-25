@@ -23,7 +23,7 @@ Proof links may only point to **github.com** (an issue or pull request) or **you
 
 1. Copy [`templates/report.md`](templates/report.md) to `reports/<layer>/<serial>-<os>-<yyyy-mm-dd>.md`, for example `reports/KytyPS5/PPSA01234-linux-2026-10-25.md`.
 2. Fill in every field. Write `Not reported` for a detail you don't know. Never guess.
-3. Open a pull request. A maintainer reviews it before merge.
+3. Open a pull request. An automatic check validates every report against these rules, then a maintainer reviews it. You can run the same check yourself first with `python3 scripts/validate.py`.
 
 ### Fields
 

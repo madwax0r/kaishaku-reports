@@ -1,0 +1,22 @@
+name: Validate reports
+
+on:
+  pull_request:
+    paths:
+      - "reports/**"
+      - "scripts/validate.py"
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check reports against the kaishaku.ch rules
+        run: python3 scripts/validate.py
