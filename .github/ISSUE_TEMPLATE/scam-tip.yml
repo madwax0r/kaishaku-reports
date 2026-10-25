@@ -1,0 +1,47 @@
+name: Scam tip
+description: Report a fake PS4 or PS5 "emulator" site, download or GitHub repository
+title: "Scam tip: "
+labels: ["scam-tip"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping. Please do not download, run or open anything to investigate. Write domains defanged, like `example[.]com`, and never paste a working download link.
+  - type: input
+    id: name
+    attributes:
+      label: Name or alias the scam uses
+      placeholder: e.g. PS5 Emulator Pro
+    validations:
+      required: true
+  - type: textarea
+    id: where
+    attributes:
+      label: Where it appears
+      description: Defanged domains, or owner/name for a GitHub repository.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What it seems to be
+      options:
+        - Info-stealer or other malware
+        - Survey or "human verification" scam
+        - Fake interface wrapped around something else
+        - Fake GitHub repository
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: flags
+    attributes:
+      label: Technical red flags
+      description: What you saw, e.g. closed-source binary only, asks to run as administrator, asks you to paste a PowerShell command, survey before download, antivirus detections.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Public write-ups, scan reports or news coverage, if any.
